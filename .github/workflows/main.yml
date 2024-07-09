@@ -38,8 +38,6 @@ jobs:
 
       - name: Test
         run: dotnet test
-
-      - name: Analyze
         
   sonarcloud:
     name: Build and analyze
