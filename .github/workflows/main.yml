@@ -32,15 +32,19 @@ jobs:
 
       - name: Install dependencies
         run: dotnet restore
+        working-directory: ./TpvTool
 
       - name: Build
         run: dotnet build
+        working-directory: ./TpvTool
 
       - name: Test
         run: dotnet test
+        working-directory: ./TpvTool
         
   sonarcloud:
     name: Build and analyze
+    needs: build
     runs-on: windows-latest
     steps:
       - name: Set up JDK 17
